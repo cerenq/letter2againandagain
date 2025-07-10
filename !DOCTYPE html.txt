@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2. Mektuba Ulaş</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f1eb;
+      color: #4b3621;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #6b4f3b;
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .quiz-container {
+      background: #fff8f3;
+      border: 2px solid #e6dcd3;
+      border-radius: 12px;
+      padding: 20px 25px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    button {
+      margin-top: 15px;
+      background-color: #c8a98e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 25px;
+      font-weight: bold;
+      text-align: center;
+    }
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #6b4f3b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>2. Mektuba Ulaşmak İçin Soruları Doğru Yanıtla 💌</h1>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Üsküdar'da seni ilk karşıladığımda kulağımdaki çiçek hangi renkti?</p>
+        <label><input type="radio" name="q1" value="Pembe" /> Pembe</label>
+        <label><input type="radio" name="q1" value="Kırmızı" /> Kırmızı</label>
+        <label><input type="radio" name="q1" value="Beyaz" /> Beyaz</label>
+        <label><input type="radio" name="q1" value="Mavi" /> Mavi</label>
+      </div>
+
+      <div class="question">
+        <p>2. Favori metro ağım hangisi?</p>
+        <label><input type="radio" name="q2" value="M4" /> M4</label>
+        <label><input type="radio" name="q2" value="M5" /> M5</label>
+        <label><input type="radio" name="q2" value="M3" /> M3</label>
+        <label><input type="radio" name="q2" value="M7" /> M7</label>
+      </div>
+
+      <button type="submit">Gönder</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("quizForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const q1 = form.q1.value;
+      const q2 = form.q2.value;
+
+      if (q1 === "Beyaz" && q2 === "M5") {
+        result.innerHTML = `
+          <p>🎉 TEBRİKLER SEVGİLİM!</p>
+          <a href="https://www.notion.so/Merhaba-sevgilim-22cb1c2000938014973cce573bd19e15" target="_blank">Mektubuna buradan ulaş 💌</a>
+        `;
+      } else {
+        result.innerHTML = "Hmm... Bir şeyleri yanlış hatırlıyor gibisin 🙊";
+      }
+    });
+  </script>
+</body>
+</html>
